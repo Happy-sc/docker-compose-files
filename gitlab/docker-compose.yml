@@ -5,17 +5,17 @@ services:
     image: gitlab/gitlab-ce:13.2.1-ce.0
     container_name: gitlab
     restart: always
-    hostname: 'domain'
+    hostname: 'renrui001'
     environment:
       TZ: 'Asia/Shanghai'
       GITLAB_OMNIBUS_CONFIG: |
-        external_url = 'domain'
+        #external_url 'https://gitlab.xp.work:8880'
         gitlab_rails['gitlab_shell_ssh_port'] = 22
         gitlab_rails['time_zone'] = 'Asia/Shanghai'
     ports:
-      - '80:80'
-      - '443:443'
-      - '22:22'
+      - '8880:80'
+      - '4443:443'
+      - '2222:22'
     volumes:
       - ./config:/etc/gitlab
       - ./data:/var/opt/gitlab
